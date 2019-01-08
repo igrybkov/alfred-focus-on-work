@@ -1,9 +1,31 @@
-name=$(shell /usr/libexec/PlistBuddy -c Print:name info.plist)
+BIN = ./node_modules/.bin
+.PHONY: test clean
 
-all: build open
+test:
+	@npm test
 
-open: bin/$(name).alfredworkflow
-	open bin/$(name).alfredworkflow
+define release
+	VERSION=`node -pe "require('./package.json').version"` && \
+	NEXT_VERSION=`node -pe "require('semver').inc(\"$$VERSION\", '$(1)')"` && \
+	node -e "\
+			var j = require('./package.json');\
+			j.version = \"$$NEXT_VERSION\";\
+			var s = JSON.stringify(j, null, 2);\
+			require('fs').writeFileSync('./package.json', s);" && \
+	git commit -m "Version $$NEXT_VERSION" -- package.json && \
+	git tag "v$$NEXT_VERSION" -m "Version v$$NEXT_VERSION"
+endef
 
-build:
-	-pushd .; zip -r FocusOnWork.alfredworkflow .; popd
+release-patch: test
+	@$(call release,patch)
+
+release-minor: test
+	@$(call release,minor)
+
+release-major: test
+	@$(call release,major)
+
+publish:
+	git push
+	git push --tags origin HEAD:master
+	npm publish
