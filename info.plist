@@ -351,7 +351,7 @@
 	<key>createdby</key>
 	<string>Illia Grybkov</string>
 	<key>description</key>
-	<string></string>
+	<string>Alfred workflow which forces to focus on work and tracks a time for you</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
@@ -593,6 +593,21 @@ echo "$file"</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>variables</key>
+				<dict/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>06E44630-D35F-4FE8-8497-D1C011084C5A</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>inputstring</key>
 				<string>{query}</string>
 				<key>matchcasesensitive</key>
@@ -606,21 +621,6 @@ echo "$file"</string>
 			<string>alfred.workflow.utility.filter</string>
 			<key>uid</key>
 			<string>5B196F6E-5E0B-4BF1-B589-B0DC8A481306</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
-				<string></string>
-				<key>variables</key>
-				<dict/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>06E44630-D35F-4FE8-8497-D1C011084C5A</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -646,25 +646,6 @@ echo "$file"</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>inputstring</key>
-				<string>{query}</string>
-				<key>matchcasesensitive</key>
-				<true/>
-				<key>matchmode</key>
-				<integer>0</integer>
-				<key>matchstring</key>
-				<string>last_task</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.filter</string>
-			<key>uid</key>
-			<string>44BCC934-D0CF-4C7C-A1BF-C85B24678937</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>argument</key>
 				<string>{query}</string>
 				<key>variables</key>
@@ -679,6 +660,25 @@ echo "$file"</string>
 			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
 			<string>44B7AACA-FFC2-4E89-8AF3-F4C866268B83</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>inputstring</key>
+				<string>{query}</string>
+				<key>matchcasesensitive</key>
+				<true/>
+				<key>matchmode</key>
+				<integer>0</integer>
+				<key>matchstring</key>
+				<string>last_task</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.filter</string>
+			<key>uid</key>
+			<string>44BCC934-D0CF-4C7C-A1BF-C85B24678937</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -752,14 +752,6 @@ echo "$file"</string>
 			<integer>2</integer>
 		</dict>
 		<dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.junction</string>
-			<key>uid</key>
-			<string>E2BDCA6C-9F6E-4CD3-A009-9953538552DB</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
 			<key>config</key>
 			<dict>
 				<key>argument</key>
@@ -791,6 +783,39 @@ echo "$file"</string>
 			<string>60414749-4849-4B64-9DF8-53F5836EE370</string>
 			<key>version</key>
 			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.junction</string>
+			<key>uid</key>
+			<string>E2BDCA6C-9F6E-4CD3-A009-9953538552DB</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>query=$1
+
+echo "$((60 * $query))"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>2828C36B-6C21-4A9E-B347-C5D2CD4BDC03</string>
+			<key>version</key>
+			<integer>2</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -840,38 +865,19 @@ echo $?</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>query=$1
-
-echo "$((60 * $query))"</string>
-				<key>scriptargtype</key>
+				<key>inputstring</key>
+				<string>{var:task}</string>
+				<key>matchcasesensitive</key>
+				<true/>
+				<key>matchmode</key>
 				<integer>1</integer>
-				<key>scriptfile</key>
+				<key>matchstring</key>
 				<string></string>
-				<key>type</key>
-				<integer>0</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.utility.filter</string>
 			<key>uid</key>
-			<string>2828C36B-6C21-4A9E-B347-C5D2CD4BDC03</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>seconds</key>
-				<string>{query}</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.delay</string>
-			<key>uid</key>
-			<string>033419EF-9ABF-41F6-85FA-A3A82B55CFAB</string>
+			<string>814A3485-C0A2-4505-AE78-FBD5B99C01E6</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -897,19 +903,13 @@ echo "$((60 * $query))"</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>inputstring</key>
-				<string>{var:task}</string>
-				<key>matchcasesensitive</key>
-				<true/>
-				<key>matchmode</key>
-				<integer>1</integer>
-				<key>matchstring</key>
-				<string></string>
+				<key>seconds</key>
+				<string>{query}</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.utility.filter</string>
+			<string>alfred.workflow.utility.delay</string>
 			<key>uid</key>
-			<string>814A3485-C0A2-4505-AE78-FBD5B99C01E6</string>
+			<string>033419EF-9ABF-41F6-85FA-A3A82B55CFAB</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1206,8 +1206,8 @@ echo "$((60 * $query))"</string>
 		</dict>
 	</dict>
 	<key>version</key>
-	<string></string>
+	<string>0.0.1</string>
 	<key>webaddress</key>
-	<string>https://grybkov.com</string>
+	<string>https://github.com/igrybkov/alfred-focus-on-work#readme</string>
 </dict>
 </plist>

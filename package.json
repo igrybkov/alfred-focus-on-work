@@ -20,9 +20,15 @@
     "preuninstall": "./node_modules/alfred-link/unlink.js"
   },
   "files": [
-    "index.js",
+    "app.js",
     "icon.png",
-    "info.plist"
+    "info.plist",
+    "icons",
+    "src",
+    "!**/test.js",
+    "!**/*.test.js",
+    "!**/test/*.js",
+    "!**/.DS_Store"
   ],
   "keywords": [
     "alfred",
