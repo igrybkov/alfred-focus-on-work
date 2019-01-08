@@ -124,7 +124,7 @@ const getTasks = async () => {
     }
     // console.log(items);
     for (const item of items) {
-      if (item.type === 'task') {
+      if (item.type === 'task' || item.type === 'project') {
         const task = new Task(item.value, item.tags, project)
 
         if (task.canShowTask()) {
