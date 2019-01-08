@@ -52,7 +52,7 @@ exports.getList = () => {
     subtitle: `Today's tasks from Things`,
     arg: 'tasks',
     icon: {
-      path: 'icons/all-tasks.png'
+      path: 'images/all-tasks.png'
     },
     variables: {
       taskmanager: 'all'

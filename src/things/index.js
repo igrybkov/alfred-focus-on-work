@@ -19,7 +19,7 @@ const alfy = require('alfy')
 
 const getIcon = () => {
   return {
-    path: 'icons/things.png'
+    path: 'images/things.png'
   }
 }
 
@@ -55,9 +55,7 @@ const getTasks = async () => {
         title: 'There are no tasks found for ⭐️ Today',
         arg: '',
         valid: false,
-        icon: {
-          path: 'icons/things3.png'
-        }
+        icon: getIcon()
       }
     ]
   }

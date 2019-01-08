@@ -5,7 +5,7 @@ const config = require('../config')
 
 const getIcon = () => {
   return {
-    path: 'icons/taskpaper.png'
+    path: 'images/taskpaper.png'
   }
 }
 
