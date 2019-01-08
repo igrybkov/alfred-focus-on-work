@@ -1,6 +1,6 @@
 {
   "name": "alfred-focus-on-work",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Alfred workflow which forces to focus on work and tracks a time for you",
   "license": "MIT",
   "repository": "igrybkov/alfred-focus-on-work",
@@ -43,14 +43,14 @@
     "xo": "^0.17.0"
   },
   "xo": {
-		"space": 2,
+    "space": 2,
     "semicolon": false
   },
   "ava": {
     "files": [
-			"**/test.js",
-			"**/*.test.js",
-			"**/test/*.js"
+      "**/test.js",
+      "**/*.test.js",
+      "**/test/*.js"
     ]
   }
 }
