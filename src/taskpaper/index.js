@@ -15,6 +15,14 @@ exports.getIcon = getIcon
 
 exports.isFileSet = () => config.has(CONFIG_FILE_PATH)
 
+const getFile = () => {
+  let value = config.get(CONFIG_FILE_PATH)
+  if (value !== undefined) {
+    value = value.trim()
+  }
+  return value
+}
+
 class Task {
   constructor(title, tags, project) {
     this.title = title
@@ -23,13 +31,13 @@ class Task {
     this.tagsLine = tags.join(', ')
     this.uid = crypto.createHash('sha256').update(title).digest('hex')
 
-    this.matchLine = [this.title, this.project, this.tagsLine].filter((v) => v !== '').join(' ')
-    this.subTitle = [this.project, this.tagsLine].filter((v) => v !== '').join(' | ')
+    this.matchLine = [this.title, this.project, this.tagsLine].filter(v => v !== '').join(' ')
+    this.subTitle = [this.project, this.tagsLine].filter(v => v !== '').join(' | ')
   }
 
   deserializeTag(tag) {
     var deserialized = tag.replace(/^/, '')
-    var returnTag = { 'name': deserialized }
+    var returnTag = {name: deserialized}
 
     if (deserialized.match(/\(.+\)/)) {
       var parenIndex = deserialized.indexOf('(')
@@ -129,13 +137,14 @@ const getTasks = async () => {
             icon: getIcon(),
             variables: {
               task: task.title,
+              // eslint-disable-next-line camelcase
               task_source: 'taskpaper'
             }
           })
         }
       }
       if (Array.isArray(item.children)) {
-        const itemProject = item.type === 'project' ? item.value + (project !== '' ? ' <- ' + project : '') : project
+        const itemProject = item.type === 'project' ? item.value + (project === '' ? '' : ' <- ' + project) : project
         collectTasks(item.children, itemProject)
       }
     }
@@ -169,12 +178,4 @@ end tell
 
   let ascript = util.promisify(applescript.execString)
   await ascript(script)
-}
-
-const getFile = () => {
-  let value = config.get(CONFIG_FILE_PATH)
-  if (value !== undefined) {
-    value = value.trim()
-  }
-  return value
 }

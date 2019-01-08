@@ -2,9 +2,9 @@
 'use strict'
 
 var program = require('commander')
+const alfy = require('alfy')
 const timing = require('./src/timing')
 const things = require('./src/things')
-const alfy = require('alfy')
 
 program
   .version('0.1.0')
@@ -12,8 +12,8 @@ program
 program.command('timing:start')
   .description('Start Timing')
   .action(async () => {
-    const task = process.env['task']
-    const time = process.env['time']
+    const task = process.env.task
+    const time = process.env.time
     if (!(task && time)) {
       console.error('Invalid runtime: task and time environment variables could not be empty.')
       process.exit(1)
@@ -35,16 +35,8 @@ program.command('open:things:today')
     alfy.log('things:open')
   })
 
-program.command('tasks:things')
-  .description('Show list of tasks from Things')
-  .action(async () => {
-    const tasks = await things.getTasks()
-    alfy.output(tasks)
-    alfy.log('things:tasks')
-  })
-
 program.command('open:taskpaper:today')
-  .description('Start Timing')
+  .description(`Open Today's tasks in TaskPaper`)
   .action(async () => {
     try {
       const taskpaper = require('./src/taskpaper')
@@ -55,20 +47,44 @@ program.command('open:taskpaper:today')
     alfy.log('open:taskpaper:today')
   })
 
-program.command('tasks:taskpaper')
-  .description('Start Timing')
-  .action(async () => {
-    const taskpaper = require('./src/taskpaper')
-    const tasks = await taskpaper.getTasks()
-    alfy.output(tasks)
-    alfy.log('tasks:taskpaper')
+program.command('tasks:list')
+  .arguments('[app]')
+  .description('Show list of tasks from selected app (all by default)')
+  .action(async app => {
+    app = app || process.env.taskmanager || 'all'
+
+    const providers = {
+      things: async () => {
+        return things.getTasks()
+      },
+      taskpaper: async () => {
+        const taskpaper = require('./src/taskpaper')
+        return taskpaper.getTasks()
+      }
+    }
+
+    let items = []
+
+    if (app === 'all') {
+      for (const provider of Object.values(providers)) {
+        const tasks = await provider()
+        items = items.concat(tasks)
+      }
+    } else if (providers[app] === undefined) {
+      throw new Error(`Tasks manager is not supported: ${app}`)
+    } else {
+      const provider = providers[app]
+      items = await provider()
+    }
+
+    alfy.output(items)
   })
 
 program.command('focus:start')
   .description('Start Focus')
   .action(async () => {
     const focus = require('./src/focus')
-    const time = process.env['time']
+    const time = process.env.time
     if (!time) {
       console.error('Invalid runtime: time environment variable must be set.')
       process.exit(1)
@@ -95,7 +111,7 @@ program.command('config:set')
   })
 
 program.command('menu:tasklist')
-  .description('Start Timing')
+  .description('Show menu with list of available task managers')
   .action(async () => {
     const taskList = require('./src/taskList')
     alfy.output(taskList.getList())
@@ -106,9 +122,9 @@ program.command('scenario:work:start')
   .description('Start work scenario')
   .action(async () => {
     const config = require('./src/config')
-    const task = process.env['task']
-    const source = process.env['task_source']
-    const time = process.env['time']
+    const task = process.env.task
+    const source = process.env.task_source
+    const time = process.env.time
     const focus = require('./src/focus')
 
     // start the tools
@@ -123,7 +139,7 @@ program.command('scenario:work:stop')
   .description('Stop work scenario')
   .action(async () => {
     const config = require('./src/config')
-    const task = process.env['task']
+    const task = process.env.task
     const focus = require('./src/focus')
     const currentTask = config.get('task.in_progress.title')
 
@@ -161,7 +177,7 @@ program.commands.sort((a, b) => a._name.localeCompare(b._name))
 /**
  * Print help if no arguments passed
  */
-if (!process.argv.slice(2).length) {
+if (process.argv.slice(2).length === 0) {
   program.help()
 }
 

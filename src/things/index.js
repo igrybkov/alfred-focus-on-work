@@ -13,8 +13,8 @@
  * tell application "Things3" to get names of each to do of list "Today"
  */
 
-const applescript = require('applescript')
 const util = require('util')
+const applescript = require('applescript')
 const alfy = require('alfy')
 
 const getIcon = () => {
@@ -79,11 +79,12 @@ const getTasks = async () => {
         uid: item.id,
         title: title,
         arg: title,
-        match: [title, project, area, tags].filter((v) => v !== '').join(' '),
-        subtitle: [project, area, tags].filter((v) => v !== '').join(' | '),
+        match: [title, project, area, tags].filter(v => v !== '').join(' '),
+        subtitle: [project, area, tags].filter(v => v !== '').join(' | '),
         icon: getIcon(),
         variables: {
           task: title,
+          // eslint-disable-next-line camelcase
           task_source: 'things'
         }
       })

@@ -17,7 +17,7 @@ const getData = () => {
   return data
 }
 
-exports.get = (name) => {
+exports.get = name => {
   if (name === undefined) {
     throw new Error('Name must be set')
   }
@@ -25,7 +25,7 @@ exports.get = (name) => {
   return data[name]
 }
 
-exports.has = (name) => {
+exports.has = name => {
   if (name === undefined) {
     throw new Error('Name must be set')
   }
@@ -40,7 +40,7 @@ exports.set = (name, value) => {
   plist.writeFileSync(file, data)
 }
 
-exports.remove = (name) => {
+exports.remove = name => {
   let newData = getData()
   delete newData[name]
   data = newData

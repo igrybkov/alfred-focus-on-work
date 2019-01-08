@@ -6,9 +6,9 @@ exports.getList = () => {
   const taskpaper = require('../taskpaper')
   const items = []
 
-  const hasTaskInProgress = !!config.get('task.in_progress.title')
+  const hasTaskInProgress = Boolean(config.get('task.in_progress.title'))
 
-  const getIcon = (source) => {
+  const getIcon = source => {
     if (source === 'things') {
       return things.getIcon()
     } else if (source === 'taskpaper') {
@@ -26,6 +26,7 @@ exports.getList = () => {
       arg: 'stop',
       variables: {
         task: currentTask,
+        // eslint-disable-next-line camelcase
         task_source: taskSource
       }
     }
@@ -47,9 +48,21 @@ exports.getList = () => {
   }
 
   items.push({
+    title: 'All tasks',
+    subtitle: `Today's tasks from Things`,
+    arg: 'tasks',
+    icon: {
+      path: 'icons/all-tasks.png'
+    },
+    variables: {
+      taskmanager: 'all'
+    }
+  })
+
+  items.push({
     title: 'Things',
-    subtitle: "Today's tasks from Things",
-    arg: 'things',
+    subtitle: `Today's tasks from Things`,
+    arg: 'tasks',
     icon: things.getIcon(),
     mods: {
       alt: {
@@ -59,14 +72,14 @@ exports.getList = () => {
       }
     },
     variables: {
-      task_source: 'things'
+      taskmanager: 'things'
     }
   })
 
   const taskPaperItem = {
     title: 'TaskPaper',
-    subtitle: "Today's tasks from TaskPaper",
-    arg: 'taskpaper',
+    subtitle: `Today's tasks from TaskPaper`,
+    arg: 'tasks',
     icon: taskpaper.getIcon(),
     mods: {
       alt: {
@@ -81,7 +94,7 @@ exports.getList = () => {
       }
     },
     variables: {
-      task_source: 'taskpaper'
+      taskmanager: 'taskpaper'
     }
   }
   // In case config file is not set

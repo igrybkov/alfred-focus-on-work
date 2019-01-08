@@ -1,10 +1,10 @@
 'use strict'
 
+const util = require('util')
 const applescript = require('applescript')
 const alfy = require('alfy')
-const util = require('util')
 
-exports.start = async (timeInMinutes) => {
+exports.start = async timeInMinutes => {
   const unfocusScript = `do shell script "open focus://unfocus"`
   const focusScript = `do shell script "open focus://focus?minutes=${timeInMinutes}"`
 
