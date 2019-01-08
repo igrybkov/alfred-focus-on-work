@@ -29,3 +29,9 @@ publish:
 	git push
 	git push --tags origin HEAD:master
 	npm publish
+
+link:
+	./node_modules/alfred-link/link.js
+
+unlink:
+	./node_modules/alfred-link/unlink.js
