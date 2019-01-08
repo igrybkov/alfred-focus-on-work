@@ -13,11 +13,10 @@
     "node": ">=4"
   },
   "scripts": {
-    "script": "./node_modules/alfy/run-node.sh",
+    "app": "./node_modules/alfy/run-node.sh app.js",
     "test": "xo && ava",
     "lint": "eslint .",
     "lint-fix": "eslint . --fix",
-    "clean-plist": "./utils/clean-plist.js",
     "postinstall": "./node_modules/alfred-link/link.js",
     "preuninstall": "./node_modules/alfred-link/unlink.js"
   },
@@ -34,6 +33,7 @@
   "dependencies": {
     "alfy": "^0.6.0",
     "applescript": "^1.0.0",
+    "commander": "^2.19.0",
     "foldingtext": "^1.3.1",
     "taskpaper": "^1.3.0"
   },
@@ -46,11 +46,7 @@
     "eslint-plugin-node": "^8.0.1",
     "eslint-plugin-promise": "^4.0.1",
     "eslint-plugin-standard": "^4.0.0",
-    "pre-commit": "^1.2.2",
     "simple-plist": "^1.0.0",
     "xo": "^0.17.0"
-  },
-  "pre-commit": [
-    "clean-plist"
-  ]
+  }
 }

@@ -1,32 +1,22 @@
 'use strict'
 
-const taskpaper = require('taskpaper')
-const alfy = require('alfy')
-const process = require('process')
-const fs = require('fs')
 const crypto = require('crypto')
+const config = require('../config')
 
-let errorMessage
-const filePath = process.env['taskpaper_file']
+const getIcon = () => {
+  return {
+    path: 'icons/taskpaper.png'
+  }
+}
 
-if (filePath === undefined) {
-  errorMessage = 'TaskPaper file path is not set'
-} else if (!fs.lstatSync(filePath).isFile()) {
-  errorMessage = 'TaskPaper file does not exist'
-}
-if (errorMessage !== undefined) {
-  alfy.output([{
-    title: errorMessage,
-    arg: '',
-    valid: false,
-    icon: {
-      path: 'icons/taskpaper.png'
-    }
-  }])
-}
+const CONFIG_FILE_PATH = 'taskpaper.file'
+
+exports.getIcon = getIcon
+
+exports.isFileSet = () => config.has(CONFIG_FILE_PATH)
 
 class Task {
-  constructor (title, tags, project) {
+  constructor(title, tags, project) {
     this.title = title
     this.project = project
     this.tags = Array.isArray(tags) ? tags.map(this.deserializeTag) : []
@@ -37,7 +27,7 @@ class Task {
     this.subTitle = [this.project, this.tagsLine].filter((v) => v !== '').join(' | ')
   }
 
-  deserializeTag (tag) {
+  deserializeTag(tag) {
     var deserialized = tag.replace(/^/, '')
     var returnTag = { 'name': deserialized }
 
@@ -51,15 +41,15 @@ class Task {
     return returnTag
   }
 
-  canShowTask () {
+  canShowTask() {
     return !this.isDone() && this.isStarted() && this.isProperTime()
   }
 
-  isDone () {
+  isDone() {
     return undefined !== this.tags.find(tag => tag.name.toLowerCase() === 'done')
   }
 
-  isStarted () {
+  isStarted() {
     return (tags => {
       for (const tag of tags) {
         if (tag.name.toLowerCase() === 'start' && tag.value !== undefined) {
@@ -71,7 +61,7 @@ class Task {
     })(this.tags)
   }
 
-  isProperTime () {
+  isProperTime() {
     return (tags => {
       for (const tag of tags) {
         if (tag.name.toLowerCase() === 'today') {
@@ -90,13 +80,33 @@ class Task {
   }
 }
 
-fs.readFile(filePath, 'utf8', (err, data) => {
-  if (err) {
-    throw err
-  };
+const getTasks = async () => {
+  const util = require('util')
+  const taskpaper = require('taskpaper')
+  const fs = require('fs')
 
-  data = data.replace(/\s+\n/g, '\n')
-  const output = taskpaper(data)
+  let errorMessage
+  const filePath = getFile()
+
+  if (filePath === undefined) {
+    errorMessage = 'TaskPaper file path is not set'
+  } else if (!fs.lstatSync(filePath.trim()).isFile()) {
+    errorMessage = 'TaskPaper file does not exist'
+  }
+  if (errorMessage !== undefined) {
+    return [
+      {
+        title: errorMessage,
+        arg: '',
+        valid: false,
+        icon: getIcon()
+      }
+    ]
+  }
+
+  let readFile = util.promisify(fs.readFile)
+  const rawFileData = await readFile(filePath.trim(), 'utf8')
+  const output = taskpaper(rawFileData.replace(/\s+\n/g, '\n'))
 
   let tasks = []
 
@@ -116,9 +126,7 @@ fs.readFile(filePath, 'utf8', (err, data) => {
             arg: task.title,
             match: task.matchLine,
             subtitle: task.subTitle,
-            icon: {
-              path: 'icons/taskpaper.png'
-            },
+            icon: getIcon(),
             variables: {
               task: task.title,
               task_source: 'taskpaper'
@@ -134,5 +142,39 @@ fs.readFile(filePath, 'utf8', (err, data) => {
   }
 
   collectTasks(output.children)
-  alfy.output(tasks)
-})
+
+  return tasks
+}
+
+exports.getTasks = getTasks
+
+/**
+ * @todo now this function just opens TaskPaper, not today's view
+ */
+exports.openToday = async () => {
+  const file = getFile()
+  const script = `
+tell application "TaskPaper"
+  open "${file}"
+  activate
+end tell
+`
+  const fs = require('fs')
+  const util = require('util')
+  const applescript = require('applescript')
+
+  if (!fs.lstatSync(file).isFile()) {
+    throw new Error('TaskPaper file does not exist')
+  }
+
+  let ascript = util.promisify(applescript.execString)
+  await ascript(script)
+}
+
+const getFile = () => {
+  let value = config.get(CONFIG_FILE_PATH)
+  if (value !== undefined) {
+    value = value.trim()
+  }
+  return value
+}
