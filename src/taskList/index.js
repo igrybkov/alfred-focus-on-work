@@ -25,6 +25,7 @@ exports.getList = () => {
       subtitle: currentTask,
       arg: 'stop',
       variables: {
+        uuid: config.get('session.last_complete'),
         task: currentTask,
         // eslint-disable-next-line camelcase
         task_source: taskSource
