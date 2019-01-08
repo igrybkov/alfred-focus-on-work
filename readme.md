@@ -14,20 +14,20 @@ $ npm install --global alfred-focus-on-work
 
 ## Usage
 
-In Alfred, type `w`, <kbd>Enter</kbd>, and your query.
+In Alfred, type `fow`, <kbd>Enter</kbd>, and follow the menu.
 
 ## Development
 
 Link workflow for development:
 
 ```shell
-./node_modules/alfred-link/link.js
+make link
 ```
 
 Unlink:
 
 ```shell
-./node_modules/alfred-link/unlink.js
+make unlink
 ```
 
 ## License
