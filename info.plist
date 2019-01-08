@@ -293,7 +293,7 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>5B196F6E-5E0B-4BF1-B589-B0DC8A481306</string>
+				<string>32A7B5B1-E733-4F71-B7A3-91AF5CF88A34</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -303,7 +303,7 @@
 			</dict>
 			<dict>
 				<key>destinationuid</key>
-				<string>32A7B5B1-E733-4F71-B7A3-91AF5CF88A34</string>
+				<string>5B196F6E-5E0B-4BF1-B589-B0DC8A481306</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -333,7 +333,18 @@
 			</dict>
 		</array>
 		<key>EEB4DE5E-13CD-49E5-B27A-6367425AAB34</key>
-		<array/>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>06E44630-D35F-4FE8-8497-D1C011084C5A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>EEDE0FC2-77B7-4C1F-B387-BB537D47F622</key>
 		<array>
 			<dict>
@@ -405,53 +416,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>alfredfiltersresults</key>
-				<true/>
-				<key>alfredfiltersresultsmatchmode</key>
-				<integer>0</integer>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
-				<key>argumenttype</key>
-				<integer>1</integer>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>keyword</key>
-				<string>fow</string>
-				<key>queuedelaycustom</key>
-				<integer>3</integer>
-				<key>queuedelayimmediatelyinitially</key>
-				<true/>
-				<key>queuedelaymode</key>
-				<integer>0</integer>
-				<key>queuemode</key>
-				<integer>2</integer>
-				<key>runningsubtext</key>
-				<string>Searching...</string>
-				<key>script</key>
-				<string>./node_modules/.bin/run-node app.js menu:tasklist</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string>app.js</string>
-				<key>subtext</key>
-				<string></string>
-				<key>title</key>
-				<string>Focus on work</string>
-				<key>type</key>
-				<integer>0</integer>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.scriptfilter</string>
-			<key>uid</key>
-			<string>E4123136-A52E-4062-89E1-6713C4D8BE98</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -504,6 +468,8 @@
 				<integer>1</integer>
 				<key>escaping</key>
 				<integer>102</integer>
+				<key>keyword</key>
+				<string>fow</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -515,7 +481,7 @@
 				<key>runningsubtext</key>
 				<string>Searching...</string>
 				<key>script</key>
-				<string>./node_modules/.bin/run-node app.js tasks:list</string>
+				<string>./node_modules/.bin/run-node app.js menu:tasklist</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -523,7 +489,7 @@
 				<key>subtext</key>
 				<string></string>
 				<key>title</key>
-				<string>Choose a task...</string>
+				<string>Focus on work</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
@@ -532,7 +498,7 @@
 			<key>type</key>
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>6483A4BC-08F5-43BF-84C0-1288E9ACE1D9</string>
+			<string>E4123136-A52E-4062-89E1-6713C4D8BE98</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
@@ -593,6 +559,70 @@ echo "$file"</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>inputstring</key>
+				<string>{query}</string>
+				<key>matchcasesensitive</key>
+				<true/>
+				<key>matchmode</key>
+				<integer>0</integer>
+				<key>matchstring</key>
+				<string>taskpaper_set_file</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.filter</string>
+			<key>uid</key>
+			<string>32A7B5B1-E733-4F71-B7A3-91AF5CF88A34</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<true/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>2</integer>
+				<key>runningsubtext</key>
+				<string>Searching...</string>
+				<key>script</key>
+				<string>./node_modules/.bin/run-node app.js tasks:list</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>app.js</string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Choose a task...</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>6483A4BC-08F5-43BF-84C0-1288E9ACE1D9</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argument</key>
 				<string></string>
 				<key>variables</key>
@@ -621,25 +651,6 @@ echo "$file"</string>
 			<string>alfred.workflow.utility.filter</string>
 			<key>uid</key>
 			<string>5B196F6E-5E0B-4BF1-B589-B0DC8A481306</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>inputstring</key>
-				<string>{query}</string>
-				<key>matchcasesensitive</key>
-				<true/>
-				<key>matchmode</key>
-				<integer>0</integer>
-				<key>matchstring</key>
-				<string>taskpaper_set_file</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.filter</string>
-			<key>uid</key>
-			<string>32A7B5B1-E733-4F71-B7A3-91AF5CF88A34</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -949,9 +960,9 @@ echo $?</string>
 			<key>note</key>
 			<string>Clean input</string>
 			<key>xpos</key>
-			<integer>330</integer>
+			<integer>700</integer>
 			<key>ypos</key>
-			<integer>400</integer>
+			<integer>600</integer>
 		</dict>
 		<key>0DD8BC29-2D43-4AFA-A900-FDB0EF528EB6</key>
 		<dict>
@@ -961,9 +972,9 @@ echo $?</string>
 			<string>Open things
 &gt; open:things:today</string>
 			<key>xpos</key>
-			<integer>920</integer>
+			<integer>930</integer>
 			<key>ypos</key>
-			<integer>80</integer>
+			<integer>10</integer>
 		</dict>
 		<key>1A335D22-5F1E-4378-9935-58820997919B</key>
 		<dict>
@@ -994,9 +1005,9 @@ echo $?</string>
 			<key>note</key>
 			<string>Set TaskPaper file</string>
 			<key>xpos</key>
-			<integer>830</integer>
+			<integer>320</integer>
 			<key>ypos</key>
-			<integer>430</integer>
+			<integer>360</integer>
 		</dict>
 		<key>44B7AACA-FFC2-4E89-8AF3-F4C866268B83</key>
 		<dict>
@@ -1023,9 +1034,9 @@ echo $?</string>
 		<key>5B196F6E-5E0B-4BF1-B589-B0DC8A481306</key>
 		<dict>
 			<key>xpos</key>
-			<integer>240</integer>
+			<integer>610</integer>
 			<key>ypos</key>
-			<integer>400</integer>
+			<integer>600</integer>
 		</dict>
 		<key>60414749-4849-4B64-9DF8-53F5836EE370</key>
 		<dict>
@@ -1045,18 +1056,18 @@ echo $?</string>
 			<key>note</key>
 			<string>Choose TaskPaper file</string>
 			<key>xpos</key>
-			<integer>920</integer>
+			<integer>410</integer>
 			<key>ypos</key>
-			<integer>400</integer>
+			<integer>330</integer>
 		</dict>
 		<key>6483A4BC-08F5-43BF-84C0-1288E9ACE1D9</key>
 		<dict>
 			<key>note</key>
 			<string>Get tasks</string>
 			<key>xpos</key>
-			<integer>430</integer>
+			<integer>800</integer>
 			<key>ypos</key>
-			<integer>370</integer>
+			<integer>570</integer>
 		</dict>
 		<key>814A3485-C0A2-4505-AE78-FBD5B99C01E6</key>
 		<dict>
@@ -1086,9 +1097,9 @@ echo $?</string>
 			<string>Open TaskPaper
 &gt; open:taskpaper:today</string>
 			<key>xpos</key>
-			<integer>920</integer>
+			<integer>930</integer>
 			<key>ypos</key>
-			<integer>240</integer>
+			<integer>170</integer>
 		</dict>
 		<key>9B383CE2-648B-4340-B01F-00653A94B194</key>
 		<dict>
@@ -1097,9 +1108,9 @@ echo $?</string>
 			<key>note</key>
 			<string>Open TaskPaper</string>
 			<key>xpos</key>
-			<integer>830</integer>
+			<integer>840</integer>
 			<key>ypos</key>
-			<integer>270</integer>
+			<integer>200</integer>
 		</dict>
 		<key>A0FFB7C4-CD7A-42C8-BD43-511A2944459E</key>
 		<dict>
@@ -1161,9 +1172,9 @@ echo $?</string>
 			<key>note</key>
 			<string>Open Things</string>
 			<key>xpos</key>
-			<integer>830</integer>
+			<integer>840</integer>
 			<key>ypos</key>
-			<integer>110</integer>
+			<integer>40</integer>
 		</dict>
 		<key>E2BDCA6C-9F6E-4CD3-A009-9953538552DB</key>
 		<dict>
@@ -1177,9 +1188,9 @@ echo $?</string>
 		<key>E4123136-A52E-4062-89E1-6713C4D8BE98</key>
 		<dict>
 			<key>xpos</key>
-			<integer>10</integer>
+			<integer>30</integer>
 			<key>ypos</key>
-			<integer>130</integer>
+			<integer>310</integer>
 		</dict>
 		<key>EEB4DE5E-13CD-49E5-B27A-6367425AAB34</key>
 		<dict>
@@ -1189,9 +1200,9 @@ echo $?</string>
 			<string>Save TaskPaper file to config
 &gt; config:set</string>
 			<key>xpos</key>
-			<integer>1070</integer>
+			<integer>560</integer>
 			<key>ypos</key>
-			<integer>400</integer>
+			<integer>330</integer>
 		</dict>
 		<key>EEDE0FC2-77B7-4C1F-B387-BB537D47F622</key>
 		<dict>
