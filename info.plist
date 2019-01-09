@@ -73,24 +73,11 @@
 				<false/>
 			</dict>
 		</array>
-		<key>44B7AACA-FFC2-4E89-8AF3-F4C866268B83</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>8801E017-3F32-4942-AFB1-46357798901D</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>44BCC934-D0CF-4C7C-A1BF-C85B24678937</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>44B7AACA-FFC2-4E89-8AF3-F4C866268B83</string>
+				<string>8801E017-3F32-4942-AFB1-46357798901D</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -657,26 +644,6 @@ echo "$file"</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argument</key>
-				<string>{query}</string>
-				<key>variables</key>
-				<dict>
-					<key>task</key>
-					<string>{var:last_task}</string>
-					<key>task_source</key>
-					<string>{var:last_task_source}</string>
-				</dict>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>44B7AACA-FFC2-4E89-8AF3-F4C866268B83</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>inputstring</key>
 				<string>{query}</string>
 				<key>matchcasesensitive</key>
@@ -1008,17 +975,6 @@ echo $?</string>
 			<integer>320</integer>
 			<key>ypos</key>
 			<integer>360</integer>
-		</dict>
-		<key>44B7AACA-FFC2-4E89-8AF3-F4C866268B83</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>11</integer>
-			<key>note</key>
-			<string>Save task to variable</string>
-			<key>xpos</key>
-			<integer>200</integer>
-			<key>ypos</key>
-			<integer>670</integer>
 		</dict>
 		<key>44BCC934-D0CF-4C7C-A1BF-C85B24678937</key>
 		<dict>

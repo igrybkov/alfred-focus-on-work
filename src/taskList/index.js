@@ -42,7 +42,12 @@ exports.getList = () => {
     const lastTaskItem = {
       title: `Continue work: "${lastTask}"`,
       subtitle: lastTask,
-      arg: 'last_task'
+      arg: 'last_task',
+      variables: {
+        task: lastTask,
+        // eslint-disable-next-line camelcase
+        task_source: lastTaskSource
+      }
     }
     lastTaskItem.icon = getIcon(lastTaskSource)
     items.push(lastTaskItem)
