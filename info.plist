@@ -99,19 +99,6 @@
 				<false/>
 			</dict>
 		</array>
-		<key>60414749-4849-4B64-9DF8-53F5836EE370</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>E2BDCA6C-9F6E-4CD3-A009-9953538552DB</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>62534FE0-1E85-4E87-87E4-52A87E2124BF</key>
 		<array>
 			<dict>
@@ -155,7 +142,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>ADC01FCA-1739-4F57-8DEE-BB1A3E92C717</string>
+				<string>E108C268-F184-4558-9BB6-35136285627A</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -205,11 +192,13 @@
 				<false/>
 			</dict>
 		</array>
-		<key>ADC01FCA-1739-4F57-8DEE-BB1A3E92C717</key>
+		<key>BF643073-D76C-4993-985F-EFBC744BB8A9</key>
+		<array/>
+		<key>D9B36286-D868-4C63-92F7-9E19970612C8</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>60414749-4849-4B64-9DF8-53F5836EE370</string>
+				<string>0DD8BC29-2D43-4AFA-A900-FDB0EF528EB6</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -218,13 +207,11 @@
 				<false/>
 			</dict>
 		</array>
-		<key>BF643073-D76C-4993-985F-EFBC744BB8A9</key>
-		<array/>
-		<key>D9B36286-D868-4C63-92F7-9E19970612C8</key>
+		<key>E108C268-F184-4558-9BB6-35136285627A</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>0DD8BC29-2D43-4AFA-A900-FDB0EF528EB6</string>
+				<string>E2BDCA6C-9F6E-4CD3-A009-9953538552DB</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -682,33 +669,6 @@ echo "$file"</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttrimmode</key>
-				<integer>0</integer>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>fixedorder</key>
-				<true/>
-				<key>items</key>
-				<string>[{"title":"25 minutes","arg":"25","subtitle":""},{"title":"2 minutes","arg":"2"},{"title":"45 minutes","arg":"45","subtitle":""},{"title":"5 minutes","arg":"5","subtitle":""},{"title":"10 minutes","arg":"10","subtitle":""},{"title":"15 minutes","arg":"15","subtitle":""},{"title":"60 minutes","arg":"60","subtitle":"1 hour"},{"title":"90 minutes","arg":"90","subtitle":"1.5 hour"}]</string>
-				<key>runningsubtext</key>
-				<string></string>
-				<key>subtext</key>
-				<string></string>
-				<key>title</key>
-				<string>How long to you plan to work?</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.listfilter</string>
-			<key>uid</key>
-			<string>ADC01FCA-1739-4F57-8DEE-BB1A3E92C717</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -732,6 +692,51 @@ echo "$file"</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>alfredfiltersresults</key>
+				<true/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>2</integer>
+				<key>runningsubtext</key>
+				<string>Searching...</string>
+				<key>script</key>
+				<string>./node_modules/.bin/run-node app.js menu:time</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string>app.js</string>
+				<key>subtext</key>
+				<string></string>
+				<key>title</key>
+				<string>Choose a task...</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>E108C268-F184-4558-9BB6-35136285627A</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argument</key>
 				<string></string>
 				<key>variables</key>
@@ -741,24 +746,6 @@ echo "$file"</string>
 			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
 			<string>8801E017-3F32-4942-AFB1-46357798901D</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
-				<string></string>
-				<key>variables</key>
-				<dict>
-					<key>time</key>
-					<string>{query}</string>
-				</dict>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>60414749-4849-4B64-9DF8-53F5836EE370</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -994,17 +981,6 @@ echo $?</string>
 			<key>ypos</key>
 			<integer>600</integer>
 		</dict>
-		<key>60414749-4849-4B64-9DF8-53F5836EE370</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>7</integer>
-			<key>note</key>
-			<string>Save time to variable</string>
-			<key>xpos</key>
-			<integer>510</integer>
-			<key>ypos</key>
-			<integer>830</integer>
-		</dict>
 		<key>62534FE0-1E85-4E87-87E4-52A87E2124BF</key>
 		<dict>
 			<key>colorindex</key>
@@ -1091,15 +1067,6 @@ echo $?</string>
 			<key>ypos</key>
 			<integer>1070</integer>
 		</dict>
-		<key>ADC01FCA-1739-4F57-8DEE-BB1A3E92C717</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>7</integer>
-			<key>xpos</key>
-			<integer>340</integer>
-			<key>ypos</key>
-			<integer>800</integer>
-		</dict>
 		<key>BF643073-D76C-4993-985F-EFBC744BB8A9</key>
 		<dict>
 			<key>colorindex</key>
@@ -1131,6 +1098,17 @@ echo $?</string>
 			<integer>840</integer>
 			<key>ypos</key>
 			<integer>40</integer>
+		</dict>
+		<key>E108C268-F184-4558-9BB6-35136285627A</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>7</integer>
+			<key>note</key>
+			<string>Get tasks</string>
+			<key>xpos</key>
+			<integer>400</integer>
+			<key>ypos</key>
+			<integer>810</integer>
 		</dict>
 		<key>E2BDCA6C-9F6E-4CD3-A009-9953538552DB</key>
 		<dict>
@@ -1173,7 +1151,7 @@ echo $?</string>
 		</dict>
 	</dict>
 	<key>version</key>
-	<string>0.0.10</string>
+	<string>0.0.9</string>
 	<key>webaddress</key>
 	<string>https://github.com/igrybkov/alfred-focus-on-work#readme</string>
 </dict>
