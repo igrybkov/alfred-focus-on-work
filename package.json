@@ -65,8 +65,14 @@
     "scripts": {
       "afterBump": "/usr/libexec/PlistBuddy -c 'Set version ${version}' info.plist; make alfredworkflow"
     },
+    "git": {
+      "tagName": "v${version}",
+      "commitMessage": "Release v${version}",
+      "tagAnnotation": "Release v${version}"
+    },
     "github": {
       "release": true,
+      "releaseName": "Release v${version}",
       "assets": [
         "dist/*.alfredworkflow",
         "dist/*.zip"
