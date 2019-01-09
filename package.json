@@ -1,6 +1,6 @@
 {
   "name": "alfred-focus-on-work",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Alfred workflow which forces to focus on work and tracks a time for you",
   "license": "MIT",
   "repository": "igrybkov/alfred-focus-on-work",
@@ -18,8 +18,7 @@
     "lint-fix": "xo --fix",
     "postinstall": "./node_modules/alfred-link/link.js",
     "preuninstall": "./node_modules/alfred-link/unlink.js",
-    "release": "release-it",
-    "afterBump": "/usr/libexec/PlistBuddy -c 'Set version ${version}' info.plist; make alfredworkflow"
+    "release": "release-it"
   },
   "files": [
     "app.js",
@@ -49,7 +48,6 @@
     "alfy-test": "^0.3.0",
     "ava": "^0.18.0",
     "release-it": "^9.6.4",
-    "semver": "^5.6.0",
     "xo": "^0.17.0"
   },
   "xo": {
@@ -64,9 +62,15 @@
     ]
   },
   "release-it": {
+    "scripts": {
+      "afterBump": "/usr/libexec/PlistBuddy -c 'Set version ${version}' info.plist; make alfredworkflow"
+    },
     "github": {
       "release": true,
-      "assets": ["dist/*.alfredworkflow", "dist/*.zip"]
+      "assets": [
+        "dist/*.alfredworkflow",
+        "dist/*.zip"
+      ]
     }
   }
 }

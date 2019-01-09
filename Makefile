@@ -4,26 +4,17 @@ BIN = ./node_modules/.bin
 test:
 	@npm test
 
-define release
-	VERSION=`node -pe "require('./package.json').version"` && \
-	NEXT_VERSION=`node -pe "require('semver').inc(\"$$VERSION\", '$(1)')"` && \
-	node -e "\
-			var j = require('./package.json');\
-			j.version = \"$$NEXT_VERSION\";\
-			var s = JSON.stringify(j, null, 2);\
-			require('fs').writeFileSync('./package.json', s);" && \
-	git commit -m "Version $$NEXT_VERSION" -- package.json && \
-	git tag "v$$NEXT_VERSION" -m "Version v$$NEXT_VERSION"
-endef
+release: test
+	npm run release
 
 release-patch: test
-	@$(call release,patch)
+	npm run release -- --increment patch
 
 release-minor: test
-	@$(call release,minor)
+	npm run release -- --increment minor
 
 release-major: test
-	@$(call release,major)
+	npm run release -- --increment minor
 
 publish:
 	git push
@@ -47,5 +38,3 @@ alfredworkflow:
 	cd dist/package; npm ci --production --ignore-scripts
 	cd dist/package; zip -r ../$(name).alfredworkflow .
 	rm -rf dist/package
-	# -pushd src; zip -r ../bin/InterSystems.alfredworkflow .; popd
-	# tar -xzf bar.tar.gz -C
