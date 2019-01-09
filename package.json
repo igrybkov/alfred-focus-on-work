@@ -17,7 +17,9 @@
     "test": "xo && ava",
     "lint-fix": "xo --fix",
     "postinstall": "./node_modules/alfred-link/link.js",
-    "preuninstall": "./node_modules/alfred-link/unlink.js"
+    "preuninstall": "./node_modules/alfred-link/unlink.js",
+    "release": "release-it",
+    "afterBump": "/usr/libexec/PlistBuddy -c 'Set version ${version}' info.plist; make alfredworkflow"
   },
   "files": [
     "app.js",
@@ -46,6 +48,7 @@
   "devDependencies": {
     "alfy-test": "^0.3.0",
     "ava": "^0.18.0",
+    "release-it": "^9.6.4",
     "semver": "^5.6.0",
     "xo": "^0.17.0"
   },
@@ -59,5 +62,11 @@
       "**/*.test.js",
       "**/test/*.js"
     ]
+  },
+  "release-it": {
+    "github": {
+      "release": true,
+      "assets": ["dist/*.alfredworkflow", "dist/*.zip"]
+    }
   }
 }
