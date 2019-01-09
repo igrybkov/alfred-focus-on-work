@@ -144,8 +144,9 @@ const getTasks = async () => {
         }
       }
       if (Array.isArray(item.children)) {
-        const itemProject = item.type === 'project' ? item.value + (project === '' ? '' : ' <- ' + project) : project
-        collectTasks(item.children, itemProject)
+        const itemProject = item.value.trim().replace(/^-+|-+$/g, '')
+        const projectBreadcrumbs = item.type === 'project' ? itemProject + (project === '' ? '' : ' <- ' + project) : project
+        collectTasks(item.children, projectBreadcrumbs)
       }
     }
   }
