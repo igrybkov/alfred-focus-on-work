@@ -6,6 +6,20 @@ const alfy = require('alfy')
 const timing = require('./src/timing')
 const things = require('./src/things')
 
+/**
+ * Override Alfy's output function to always pass uuid in the output
+ */
+alfy.output = arr => {
+  const uuidv4 = require('uuid/v4')
+  const output = {
+    variables: {
+      uuid: process.env.uuid || uuidv4()
+    },
+    items: arr
+  }
+  console.log(JSON.stringify(output, null, '\t'))
+}
+
 program
   .version('0.1.0')
 
@@ -133,18 +147,20 @@ program.command('scenario:work:start')
     // save current task to configuration
     config.set('task.in_progress.title', task)
     config.set('task.in_progress.source', source)
+    // save current session uuid
+    config.set('session.last_complete', process.env.uuid)
   })
 
 program.command('scenario:work:stop')
   .description('Stop work scenario')
   .action(async () => {
     const config = require('./src/config')
-    const task = process.env.task
+    const uuid = process.env.uuid
     const focus = require('./src/focus')
-    const currentTask = config.get('task.in_progress.title')
+    const lastSessionUuid = config.get('session.last_complete')
 
-    // exit if the task is changed - this session expired
-    if (currentTask !== task) {
+    // exit if the uuid is changed - this session expired
+    if (lastSessionUuid !== uuid) {
       process.exit(1)
     }
 
