@@ -13,6 +13,10 @@ exports.getList = () => {
       return things.getIcon()
     } else if (source === 'taskpaper') {
       return taskpaper.getIcon()
+    } else if (source === 'stop') {
+      return {
+        path: 'images/stop-sign.png'
+      }
     }
     return {}
   }
@@ -21,9 +25,10 @@ exports.getList = () => {
     const currentTask = config.get('task.in_progress.title')
     const taskSource = config.get('task.in_progress.source')
     const stopTaskItem = {
-      title: 'Stop current work...',
-      subtitle: currentTask,
+      title: `${currentTask}`,
+      subtitle: 'Stop work on the task',
       arg: 'stop',
+      match: [currentTask, 'stop work'].join(' '),
       variables: {
         uuid: config.get('session.last_complete'),
         task: currentTask,
@@ -31,7 +36,7 @@ exports.getList = () => {
         task_source: taskSource
       }
     }
-    stopTaskItem.icon = getIcon(taskSource)
+    stopTaskItem.icon = getIcon('stop')
 
     items.push(stopTaskItem)
   }
@@ -42,6 +47,7 @@ exports.getList = () => {
     const lastTaskItem = {
       title: `Continue work: "${lastTask}"`,
       subtitle: lastTask,
+      match: [lastTask, 'continue work'].join(' '),
       arg: 'last_task',
       variables: {
         task: lastTask,
