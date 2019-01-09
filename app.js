@@ -129,7 +129,13 @@ program.command('menu:tasklist')
   .action(async () => {
     const taskList = require('./src/taskList')
     alfy.output(taskList.getList())
-    // alfy.log('Tasklist showed')
+  })
+
+program.command('menu:time')
+  .description('Show menu with list of time ranges')
+  .action(async () => {
+    const taskList = require('./src/timeList')
+    alfy.output(taskList.getList())
   })
 
 program.command('scenario:work:start')
