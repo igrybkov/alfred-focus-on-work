@@ -57,14 +57,10 @@ exports.getList = () => {
     )
     if (i === 2) {
       i = 5
-    } else if (i < 30) {
+    } else if (i < 60) {
       i += 5
-    } else if (i === 30) {
-      i = 40
-    } else if (i === 40) {
-      i = 45
     } else if (i < 180) {
-      i += 15
+      i += 10
       // 6 hours
     } else if (i < 360) {
       i += 30
