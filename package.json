@@ -24,7 +24,7 @@
     "app.js",
     "icon.png",
     "info.plist",
-    "icons",
+    "images",
     "src",
     "!**/test.js",
     "!**/*.test.js",
