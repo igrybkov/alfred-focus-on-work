@@ -1151,7 +1151,7 @@ echo $?</string>
 		</dict>
 	</dict>
 	<key>version</key>
-	<string>0.1.1</string>
+	<string>0.1.2</string>
 	<key>webaddress</key>
 	<string>https://github.com/igrybkov/alfred-focus-on-work#readme</string>
 </dict>
