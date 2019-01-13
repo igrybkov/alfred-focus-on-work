@@ -22,10 +22,20 @@ publish:
 	npm publish
 
 link:
-	./node_modules/alfred-link/link.js
+	-./node_modules/alfred-link/link.js
 
 unlink:
-	./node_modules/alfred-link/unlink.js
+	-./node_modules/alfred-link/unlink.js
+
+switch-to-release: unlink
+	$(eval packageName=$(shell node -e "try {var pack=require('./package.json'); console.log(pack.name); } catch(e) {}"))
+	npm install -g $(packageName)
+
+switch-to-dev:
+	$(eval packageName=$(shell node -e "try {var pack=require('./package.json'); console.log(pack.name); } catch(e) {}"))
+	npm remove -g $(packageName)
+	make link
+
 
 alfredworkflow:
 	$(eval name=$(shell /usr/libexec/PlistBuddy -c Print:name info.plist | sed -e 's/ //g'))
