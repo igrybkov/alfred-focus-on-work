@@ -38,7 +38,6 @@ program.command('timing:start')
 program.command('timing:stop')
   .description('Stop Timing')
   .action(async () => {
-    alfy.log('Timing:stop called')
     timing.stop()
   })
 
@@ -46,7 +45,6 @@ program.command('open:things:today')
   .description(`Open Today's tasks in Things`)
   .action(async () => {
     things.openToday()
-    alfy.log('things:open')
   })
 
 program.command('open:taskpaper:today')
@@ -58,7 +56,6 @@ program.command('open:taskpaper:today')
     } catch (err) {
       alfy.error(err)
     }
-    alfy.log('open:taskpaper:today')
   })
 
 program.command('tasks:list')
@@ -104,7 +101,6 @@ program.command('focus:start')
       process.exit(1)
     }
     focus.start(time)
-    alfy.log('focus:start')
   })
 
 program.command('focus:stop')
@@ -112,7 +108,6 @@ program.command('focus:stop')
   .action(async () => {
     const focus = require('./src/focus')
     focus.stop()
-    alfy.log('focus:stop')
   })
 
 program.command('config:set')
@@ -120,7 +115,7 @@ program.command('config:set')
   .arguments('<name> <value>')
   .action(async (name, value) => {
     const config = require('./src/config')
-    config.set(name, value)
+    config.set(name, value.replace(/^\s+|\s+$/g, ''))
     alfy.log('config:set')
   })
 
