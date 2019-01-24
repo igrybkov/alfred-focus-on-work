@@ -1,0 +1,27 @@
+{
+    "compileOnSave": true,
+    "compilerOptions": {
+        "outDir": "./lib/",
+        "sourceMap": false,
+        "strictNullChecks": true,
+        "noImplicitAny": true,
+        "noImplicitThis": true,
+        "alwaysStrict": true,
+        "strictFunctionTypes": true,
+        "allowSyntheticDefaultImports": true,
+        "resolveJsonModule": true,
+        "esModuleInterop": true,
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "target": "es2017",
+        "lib": ["es2016"],
+        "allowJs": false
+    },
+    "include": [
+        "./lib/**/*",
+        "./src/**/*"
+    ],
+    "exclude": [
+        "node_modules"
+    ]
+}

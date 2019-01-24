@@ -1,5 +1,5 @@
 node_modules
 .env
-/settings.plist
-dist/
 *.alfredworkflow
+/build/
+/lib/
