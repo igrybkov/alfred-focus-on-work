@@ -34,6 +34,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>18D6CE79-F897-489C-9681-F127007AEE83</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B2E94B76-11B9-45E4-A734-24A4D9D2FF35</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>1A335D22-5F1E-4378-9935-58820997919B</key>
 		<array>
 			<dict>
@@ -52,6 +65,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>033419EF-9ABF-41F6-85FA-A3A82B55CFAB</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>32040E5F-5335-438C-9096-E2372486F20C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>18D6CE79-F897-489C-9681-F127007AEE83</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -125,6 +151,32 @@
 				<false/>
 			</dict>
 		</array>
+		<key>6FC97B68-5CAA-40A1-B8C1-B775B7904460</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B2E94B76-11B9-45E4-A734-24A4D9D2FF35</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>715296B3-5ECC-4F41-80DF-6855AE5BDCBD</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>3021BCE1-1A31-4B10-94A4-AF809D8DFD44</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>814A3485-C0A2-4505-AE78-FBD5B99C01E6</key>
 		<array>
 			<dict>
@@ -151,13 +203,44 @@
 				<false/>
 			</dict>
 		</array>
-		<key>8D4082BE-71D6-460E-A1B8-604E385CF204</key>
-		<array/>
+		<key>9A086F09-4899-4DAD-9529-60760786D3E5</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A504DA76-9A88-4F30-9ACF-55B76CED37D2</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>715296B3-5ECC-4F41-80DF-6855AE5BDCBD</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>9B383CE2-648B-4340-B01F-00653A94B194</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>8D4082BE-71D6-460E-A1B8-604E385CF204</string>
+				<string>32040E5F-5335-438C-9096-E2372486F20C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>9A086F09-4899-4DAD-9529-60760786D3E5</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -171,6 +254,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>EEDE0FC2-77B7-4C1F-B387-BB537D47F622</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>A504DA76-9A88-4F30-9ACF-55B76CED37D2</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6FC97B68-5CAA-40A1-B8C1-B775B7904460</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -194,19 +290,6 @@
 		</array>
 		<key>BF643073-D76C-4993-985F-EFBC744BB8A9</key>
 		<array/>
-		<key>D9B36286-D868-4C63-92F7-9E19970612C8</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>0DD8BC29-2D43-4AFA-A900-FDB0EF528EB6</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
 		<key>E108C268-F184-4558-9BB6-35136285627A</key>
 		<array>
 			<dict>
@@ -245,16 +328,6 @@
 		</array>
 		<key>E4123136-A52E-4062-89E1-6713C4D8BE98</key>
 		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>D9B36286-D868-4C63-92F7-9E19970612C8</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
 			<dict>
 				<key>destinationuid</key>
 				<string>9B383CE2-648B-4340-B01F-00653A94B194</string>
@@ -346,27 +419,72 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>query=$1
-
-./node_modules/.bin/run-node app.js open:things:today</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
+				<key>inputstring</key>
+				<string>{var:application}</string>
+				<key>matchcasesensitive</key>
+				<true/>
+				<key>matchmode</key>
 				<integer>0</integer>
+				<key>matchstring</key>
+				<string></string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.utility.filter</string>
 			<key>uid</key>
-			<string>0DD8BC29-2D43-4AFA-A900-FDB0EF528EB6</string>
+			<string>32040E5F-5335-438C-9096-E2372486F20C</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>Environment variable "application" is not set</string>
+				<key>variables</key>
+				<dict/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>18D6CE79-F897-489C-9681-F127007AEE83</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>'{query}', {allvars}</string>
+				<key>cleardebuggertext</key>
+				<false/>
+				<key>processoutputs</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.debug</string>
+			<key>uid</key>
+			<string>B2E94B76-11B9-45E4-A734-24A4D9D2FF35</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>inputstring</key>
+				<string>{var:action}</string>
+				<key>matchcasesensitive</key>
+				<true/>
+				<key>matchmode</key>
+				<integer>0</integer>
+				<key>matchstring</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.filter</string>
+			<key>uid</key>
+			<string>A504DA76-9A88-4F30-9ACF-55B76CED37D2</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -378,12 +496,27 @@
 				<key>matchmode</key>
 				<integer>0</integer>
 				<key>matchstring</key>
-				<string>open_things</string>
+				<string>open-app</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.filter</string>
 			<key>uid</key>
-			<string>D9B36286-D868-4C63-92F7-9E19970612C8</string>
+			<string>9B383CE2-648B-4340-B01F-00653A94B194</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>Environment variable "action" is not set</string>
+				<key>variables</key>
+				<dict/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>6FC97B68-5CAA-40A1-B8C1-B775B7904460</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -395,7 +528,7 @@
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>echo $(./node_modules/.bin/run-node app.js open:taskpaper:today)</string>
+				<string>./node_modules/.bin/run-node lib/alfred-cli.js open:app</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -406,7 +539,7 @@
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>8D4082BE-71D6-460E-A1B8-604E385CF204</string>
+			<string>3021BCE1-1A31-4B10-94A4-AF809D8DFD44</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
@@ -414,18 +547,37 @@
 			<key>config</key>
 			<dict>
 				<key>inputstring</key>
-				<string>{query}</string>
+				<string>{var:action}</string>
 				<key>matchcasesensitive</key>
 				<true/>
 				<key>matchmode</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>matchstring</key>
-				<string>open_taskpaper</string>
+				<string></string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.filter</string>
 			<key>uid</key>
-			<string>9B383CE2-648B-4340-B01F-00653A94B194</string>
+			<string>715296B3-5ECC-4F41-80DF-6855AE5BDCBD</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>inputstring</key>
+				<string>{var:application}</string>
+				<key>matchcasesensitive</key>
+				<true/>
+				<key>matchmode</key>
+				<integer>1</integer>
+				<key>matchstring</key>
+				<string></string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.filter</string>
+			<key>uid</key>
+			<string>9A086F09-4899-4DAD-9529-60760786D3E5</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -455,11 +607,11 @@
 				<key>runningsubtext</key>
 				<string>Searching...</string>
 				<key>script</key>
-				<string>./node_modules/.bin/run-node app.js menu:tasklist</string>
+				<string>./node_modules/.bin/run-node lib/alfred-cli.js menu:main</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
-				<string>app.js</string>
+				<string>lib/alfred-cli.js</string>
 				<key>subtext</key>
 				<string></string>
 				<key>title</key>
@@ -514,7 +666,7 @@
 				<key>script</key>
 				<string>file=$1
 
-./node_modules/.bin/run-node app.js config:set "taskpaper.file" "$file"
+./node_modules/.bin/run-node lib/alfred-cli.js config:set "settings.taskpaper.file" "$file"
 echo "$file"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
@@ -573,11 +725,11 @@ echo "$file"</string>
 				<key>runningsubtext</key>
 				<string>Searching...</string>
 				<key>script</key>
-				<string>./node_modules/.bin/run-node app.js tasks:list</string>
+				<string>./node_modules/.bin/run-node lib/alfred-cli.js menu:tasks # -- --filter "$1"</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
-				<string>app.js</string>
+				<string>lib/alfred-cli.js</string>
 				<key>subtext</key>
 				<string></string>
 				<key>title</key>
@@ -638,7 +790,7 @@ echo "$file"</string>
 				<key>matchmode</key>
 				<integer>0</integer>
 				<key>matchstring</key>
-				<string>last_task</string>
+				<string>recent-task</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.filter</string>
@@ -657,7 +809,7 @@ echo "$file"</string>
 				<key>matchmode</key>
 				<integer>0</integer>
 				<key>matchstring</key>
-				<string>stop</string>
+				<string>stop-work</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.utility.filter</string>
@@ -674,7 +826,7 @@ echo "$file"</string>
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>./node_modules/.bin/run-node app.js scenario:work:start</string>
+				<string>./node_modules/.bin/run-node lib/alfred-cli.js scenario:work:start</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -713,11 +865,11 @@ echo "$file"</string>
 				<key>runningsubtext</key>
 				<string>Searching...</string>
 				<key>script</key>
-				<string>./node_modules/.bin/run-node app.js menu:time</string>
+				<string>./node_modules/.bin/run-node lib/alfred-cli.js menu:time</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
-				<string>app.js</string>
+				<string>lib/alfred-cli.js</string>
 				<key>subtext</key>
 				<string></string>
 				<key>title</key>
@@ -790,7 +942,7 @@ echo "$((60 * $query))"</string>
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>./node_modules/.bin/run-node app.js scenario:work:stop
+				<string>./node_modules/.bin/run-node lib/alfred-cli.js scenario:work:stop
 echo $?</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
@@ -831,7 +983,7 @@ echo $?</string>
 			<key>config</key>
 			<dict>
 				<key>inputstring</key>
-				<string>{var:task}</string>
+				<string>{var:sessionUuid}</string>
 				<key>matchcasesensitive</key>
 				<true/>
 				<key>matchmode</key>
@@ -882,7 +1034,7 @@ echo $?</string>
 			<key>config</key>
 			<dict>
 				<key>argument</key>
-				<string>{var:time}</string>
+				<string>{var:timeInMinutes}</string>
 				<key>variables</key>
 				<dict/>
 			</dict>
@@ -918,17 +1070,16 @@ echo $?</string>
 			<key>ypos</key>
 			<integer>600</integer>
 		</dict>
-		<key>0DD8BC29-2D43-4AFA-A900-FDB0EF528EB6</key>
+		<key>18D6CE79-F897-489C-9681-F127007AEE83</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>9</integer>
+			<integer>8</integer>
 			<key>note</key>
-			<string>Open things
-&gt; open:things:today</string>
+			<string>Set debug message</string>
 			<key>xpos</key>
-			<integer>930</integer>
+			<integer>720</integer>
 			<key>ypos</key>
-			<integer>10</integer>
+			<integer>20</integer>
 		</dict>
 		<key>1A335D22-5F1E-4378-9935-58820997919B</key>
 		<dict>
@@ -952,6 +1103,28 @@ echo $?</string>
 			<key>ypos</key>
 			<integer>1040</integer>
 		</dict>
+		<key>3021BCE1-1A31-4B10-94A4-AF809D8DFD44</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
+			<key>note</key>
+			<string>Open Application</string>
+			<key>xpos</key>
+			<integer>830</integer>
+			<key>ypos</key>
+			<integer>210</integer>
+		</dict>
+		<key>32040E5F-5335-438C-9096-E2372486F20C</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
+			<key>note</key>
+			<string>If "application" variable is not set</string>
+			<key>xpos</key>
+			<integer>620</integer>
+			<key>ypos</key>
+			<integer>20</integer>
+		</dict>
 		<key>32A7B5B1-E733-4F71-B7A3-91AF5CF88A34</key>
 		<dict>
 			<key>colorindex</key>
@@ -959,9 +1132,9 @@ echo $?</string>
 			<key>note</key>
 			<string>Set TaskPaper file</string>
 			<key>xpos</key>
-			<integer>320</integer>
+			<integer>270</integer>
 			<key>ypos</key>
-			<integer>360</integer>
+			<integer>440</integer>
 		</dict>
 		<key>44BCC934-D0CF-4C7C-A1BF-C85B24678937</key>
 		<dict>
@@ -988,9 +1161,9 @@ echo $?</string>
 			<key>note</key>
 			<string>Choose TaskPaper file</string>
 			<key>xpos</key>
-			<integer>410</integer>
+			<integer>360</integer>
 			<key>ypos</key>
-			<integer>330</integer>
+			<integer>410</integer>
 		</dict>
 		<key>6483A4BC-08F5-43BF-84C0-1288E9ACE1D9</key>
 		<dict>
@@ -1000,6 +1173,28 @@ echo $?</string>
 			<integer>800</integer>
 			<key>ypos</key>
 			<integer>570</integer>
+		</dict>
+		<key>6FC97B68-5CAA-40A1-B8C1-B775B7904460</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
+			<key>note</key>
+			<string>Set debug message</string>
+			<key>xpos</key>
+			<integer>850</integer>
+			<key>ypos</key>
+			<integer>130</integer>
+		</dict>
+		<key>715296B3-5ECC-4F41-80DF-6855AE5BDCBD</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
+			<key>note</key>
+			<string>If "action" variable is set</string>
+			<key>xpos</key>
+			<integer>750</integer>
+			<key>ypos</key>
+			<integer>220</integer>
 		</dict>
 		<key>814A3485-C0A2-4505-AE78-FBD5B99C01E6</key>
 		<dict>
@@ -1021,28 +1216,27 @@ echo $?</string>
 			<key>ypos</key>
 			<integer>830</integer>
 		</dict>
-		<key>8D4082BE-71D6-460E-A1B8-604E385CF204</key>
+		<key>9A086F09-4899-4DAD-9529-60760786D3E5</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>1</integer>
+			<integer>8</integer>
 			<key>note</key>
-			<string>Open TaskPaper
-&gt; open:taskpaper:today</string>
+			<string>If "application" variable is set</string>
 			<key>xpos</key>
-			<integer>930</integer>
+			<integer>620</integer>
 			<key>ypos</key>
-			<integer>170</integer>
+			<integer>220</integer>
 		</dict>
 		<key>9B383CE2-648B-4340-B01F-00653A94B194</key>
 		<dict>
 			<key>colorindex</key>
-			<integer>1</integer>
+			<integer>8</integer>
 			<key>note</key>
-			<string>Open TaskPaper</string>
+			<string>Open Application</string>
 			<key>xpos</key>
-			<integer>840</integer>
+			<integer>520</integer>
 			<key>ypos</key>
-			<integer>200</integer>
+			<integer>130</integer>
 		</dict>
 		<key>A0FFB7C4-CD7A-42C8-BD43-511A2944459E</key>
 		<dict>
@@ -1056,6 +1250,17 @@ echo $?</string>
 			<key>ypos</key>
 			<integer>1040</integer>
 		</dict>
+		<key>A504DA76-9A88-4F30-9ACF-55B76CED37D2</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
+			<key>note</key>
+			<string>If "action" variable is not set</string>
+			<key>xpos</key>
+			<integer>750</integer>
+			<key>ypos</key>
+			<integer>120</integer>
+		</dict>
 		<key>AD11FED5-ED31-4D4C-A7ED-76FC67306C7A</key>
 		<dict>
 			<key>colorindex</key>
@@ -1066,6 +1271,15 @@ echo $?</string>
 			<integer>90</integer>
 			<key>ypos</key>
 			<integer>1070</integer>
+		</dict>
+		<key>B2E94B76-11B9-45E4-A734-24A4D9D2FF35</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>8</integer>
+			<key>xpos</key>
+			<integer>860</integer>
+			<key>ypos</key>
+			<integer>30</integer>
 		</dict>
 		<key>BF643073-D76C-4993-985F-EFBC744BB8A9</key>
 		<dict>
@@ -1087,17 +1301,6 @@ echo $?</string>
 			<integer>800</integer>
 			<key>ypos</key>
 			<integer>1040</integer>
-		</dict>
-		<key>D9B36286-D868-4C63-92F7-9E19970612C8</key>
-		<dict>
-			<key>colorindex</key>
-			<integer>9</integer>
-			<key>note</key>
-			<string>Open Things</string>
-			<key>xpos</key>
-			<integer>840</integer>
-			<key>ypos</key>
-			<integer>40</integer>
 		</dict>
 		<key>E108C268-F184-4558-9BB6-35136285627A</key>
 		<dict>
@@ -1134,9 +1337,9 @@ echo $?</string>
 			<string>Save TaskPaper file to config
 &gt; config:set</string>
 			<key>xpos</key>
-			<integer>560</integer>
+			<integer>520</integer>
 			<key>ypos</key>
-			<integer>330</integer>
+			<integer>410</integer>
 		</dict>
 		<key>EEDE0FC2-77B7-4C1F-B387-BB537D47F622</key>
 		<dict>
@@ -1151,7 +1354,7 @@ echo $?</string>
 		</dict>
 	</dict>
 	<key>version</key>
-	<string>0.1.4</string>
+	<string>0.1.5</string>
 	<key>webaddress</key>
 	<string>https://github.com/igrybkov/alfred-focus-on-work#readme</string>
 </dict>

@@ -10,22 +10,29 @@
     "url": "https://grybkov.com"
   },
   "engines": {
-    "node": ">=4"
+    "node": ">=8"
   },
+  "main": "lib/alfred-cli.js",
   "scripts": {
-    "app": "run-node app.js",
-    "test": "xo && ava",
-    "lint-fix": "xo --fix",
-    "postinstall": "./node_modules/alfred-link/link.js",
-    "preuninstall": "./node_modules/alfred-link/unlink.js",
+    "app": "node lib/alfred-cli.js",
+    "app-dev": "ts-node lib/alfred-cli.js",
+    "test": "tslint -p .",
+    "lint-fix": "tslint -p . --fix",
+    "build": "rm -rf dist && tsc",
+    "watch": "tsc --watch",
+    "prepublishOnly": "npm run build",
+    "postinstall": "alfred-link",
+    "preuninstall": "alfred-unlink",
     "release": "release-it"
   },
   "files": [
-    "app.js",
+    "lib",
     "icon.png",
     "info.plist",
     "images",
-    "src",
+    "**/*.d.ts",
+    "dist",
+    "!**/*.ts",
     "!**/test.js",
     "!**/*.test.js",
     "!**/test/*.js",
@@ -37,29 +44,27 @@
     "alfy"
   ],
   "dependencies": {
+    "alfred-notifier": "^0.2.3",
     "alfy": "^0.6.0",
     "applescript": "^1.0.0",
     "commander": "^2.19.0",
-    "simple-plist": "^1.0.0",
+    "conf": "^2.2.0",
+    "find": "^0.2.9",
+    "fuse.js": "^3.3.0",
     "taskpaper": "^1.3.0",
     "uuid": "^3.3.2"
   },
   "devDependencies": {
-    "alfy-test": "^0.3.0",
-    "ava": "^0.18.0",
+    "@types/conf": "^2.1.0",
+    "@types/uuid": "^3.4.4",
+    "install": "^0.12.2",
+    "npm": "^6.6.0-next.1",
+    "prettier": "^1.16.1",
+    "prettier-tslint": "^0.4.2",
     "release-it": "^9.6.4",
-    "xo": "^0.17.0"
-  },
-  "xo": {
-    "space": 2,
-    "semicolon": false
-  },
-  "ava": {
-    "files": [
-      "**/test.js",
-      "**/*.test.js",
-      "**/test/*.js"
-    ]
+    "ts-node": "^8.0.2",
+    "tslint": "^5.12.1",
+    "typescript": "^3.2.4"
   },
   "release-it": {
     "scripts": {

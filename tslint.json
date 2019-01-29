@@ -1,0 +1,53 @@
+{
+    "defaultSeverity": "error",
+    "extends": [
+        "tslint:recommended"
+    ],
+    "jsRules": {},
+    "rules": {
+        "interface-name": [true, "never-prefix"],
+        "quotemark": [true, "single", "avoid-escape", "avoid-template"],
+        "object-literal-sort-keys": false,
+        "member-ordering": [true, {
+            "order": "fields-first"
+        }],
+        "no-unnecessary-type-assertion": true,
+        "await-promise": true,
+        "ban-comma-operator": true,
+        "curly": true,
+        "no-debugger": true,
+        "no-duplicate-super": true,
+        "no-duplicate-switch-case": true,
+        "no-dynamic-delete": true,
+        "no-eval": true,
+        "no-floating-promises": true,
+        "no-implicit-dependencies": true,
+        "no-invalid-this": true,
+        "no-invalid-template-strings": true,
+        "no-null-keyword": true,
+        "no-return-await": true,
+        "no-string-throw": true,
+        "no-string-literal": true,
+        "unnecessary-constructor": true,
+        "deprecation": true,
+        "eofline": true,
+        "indent": [true, "spaces", 2],
+        "linebreak-style": [true, "LF"],
+        "prefer-const": true,
+        "prefer-readonly": true,
+        "arrow-return-shorthand": true,
+        "file-name-casing": [true, "kebab-case"],
+        "import-spacing": true,
+        "interface-over-type-literal": true,
+        "new-parens": true,
+        "no-consecutive-blank-lines": true,
+        "no-trailing-whitespace": true,
+        "object-literal-shorthand": true,
+        "ordered-imports": true,
+        "prefer-template": true,
+        "semicolon": [true, "always"],
+        "type-literal-delimiter": true,
+        "no-console": false
+    },
+    "rulesDirectory": []
+}

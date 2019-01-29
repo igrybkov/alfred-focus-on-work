@@ -40,11 +40,11 @@ switch-to-dev:
 alfredworkflow:
 	$(eval name=$(shell /usr/libexec/PlistBuddy -c Print:name info.plist | sed -e 's/ //g'))
 	$(eval archive=$(shell npm pack 2>&1 | tail -n1))
-	rm -rf dist
-	mkdir dist
-	tar -xzf $(archive) -C dist
+	rm -rf build
+	mkdir build
+	tar -xzf $(archive) -C build
 	rm -rf $(archive)
-	cp package-lock.json dist/package/
-	cd dist/package; npm ci --production --ignore-scripts
-	cd dist/package; zip -r ../$(name).alfredworkflow .
-	rm -rf dist/package
+	cp package-lock.json build/package/
+	cd build/package; npm ci --production --ignore-scripts
+	cd build/package; zip -r ../$(name).alfredworkflow .
+	rm -rf build/package
