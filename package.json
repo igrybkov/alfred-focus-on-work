@@ -79,8 +79,8 @@
       "release": true,
       "releaseName": "Release v${version}",
       "assets": [
-        "dist/*.alfredworkflow",
-        "dist/*.zip"
+        "build/*.alfredworkflow",
+        "build/*.zip"
       ]
     }
   }
