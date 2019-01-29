@@ -6,7 +6,7 @@ import Application from '../app/application';
 // @flow
 import { createHash } from 'crypto';
 import { AlfredItemsSet } from '../alfred';
-import { GetMainMenu, GetTasks } from '../events';
+import { GetMainMenu, GetTasks, OpenApp, ResolveTaskItem } from '../events';
 
 const APP_IDENTIFIER = 'taskpaper';
 const APP_NAME = 'TaskPaper';
@@ -16,8 +16,22 @@ export default new Registrator((app: Application) => {
     return;
   }
   app.on(GetMainMenu.name, addMainMenuItem, 200);
+  app.on(ResolveTaskItem.name, resolveItem);
   app.on(GetTasks.name, addTaskpaperTasks, 200);
+  app.on(OpenApp.name, openTaskpaper);
 });
+
+const resolveItem = async (event: ResolveTaskItem, app: Application) => {
+  if (event.taskManager !== APP_IDENTIFIER) {
+    return;
+  }
+  for (const task of await getTasks(app)) {
+    if (task.uid === event.taskUid) {
+      event.item = task;
+      return;
+    }
+  }
+};
 
 const addTaskpaperTasks = async (event: GetTasks, app: Application) => {
   if (event.app && event.app !== APP_IDENTIFIER) {
@@ -35,15 +49,19 @@ const addMainMenuItem = async (event: GetMainMenu, app: Application) => {
     arg: 'tasks',
     icon: getIcon(),
     mods: {
-      alt: {
-        valid: true,
-        arg: 'open-app',
-        subtitle: 'Choose TaskPaper file',
-      },
       cmd: {
         valid: true,
-        arg: 'taskpaper_set_file',
+        arg: 'open-app',
         subtitle: 'Open TaskPaper app',
+        variables: {
+          action: 'today',
+          application: APP_IDENTIFIER,
+        },
+      },
+      alt: {
+        valid: true,
+        arg: 'taskpaper_set_file',
+        subtitle: 'Choose TaskPaper file',
         variables: {
           application: APP_IDENTIFIER,
           action: 'today',
@@ -235,7 +253,13 @@ const getTasks = async (app: Application) => {
   return tasks;
 };
 
-const openToday = async (app: Application) => {
+const openTaskpaper = async (event: OpenApp, app: Application) => {
+  if (event.appName !== APP_IDENTIFIER) {
+    return;
+  }
+  if (event.action !== 'today') {
+    throw new Error('Unsopperted action passed');
+  }
   const file = getFile(app);
   const script = `
 tell application "TaskPaper"
