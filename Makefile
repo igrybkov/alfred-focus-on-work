@@ -22,10 +22,10 @@ publish:
 	npm publish
 
 link:
-	-./node_modules/alfred-link/link.js
+	-./tools/link.js
 
 unlink:
-	-./node_modules/alfred-link/unlink.js
+	-./tools/unlink.js
 
 switch-to-release: unlink
 	$(eval packageName=$(shell node -e "try {var pack=require('./package.json'); console.log(pack.name); } catch(e) {}"))
