@@ -21,7 +21,7 @@
     "fix-style": "npm run lint -- --fix",
     "build": "rm -rf lib && tsc",
     "watch": "tsc --watch",
-    "prepublishOnly": "npm run build",
+    "prepublishOnly": "npm run build && pkg-ok",
     "postinstall": "node tools/link.js",
     "preuninstall": "node tools/unlink.js",
     "release": "release-it"
@@ -58,15 +58,23 @@
   "devDependencies": {
     "@types/conf": "^2.1.0",
     "@types/uuid": "^3.4.4",
+    "husky": "^1.3.1",
     "install": "^0.12.2",
     "npm": "^6.6.0-next.1",
     "npm-run-all": "^4.1.5",
+    "pkg-ok": "^2.3.1",
     "prettier": "^1.16.1",
     "prettier-tslint": "^0.4.2",
     "release-it": "^9.6.4",
     "ts-node": "^8.0.2",
     "tslint": "^5.12.1",
     "typescript": "^3.2.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test",
+      "pre-push": "npm test"
+    }
   },
   "release-it": {
     "scripts": {
