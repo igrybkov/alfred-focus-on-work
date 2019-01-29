@@ -1,6 +1,6 @@
 {
   "name": "alfred-focus-on-work",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "description": "Alfred workflow which forces to focus on work and tracks a time for you",
   "license": "MIT",
   "repository": "igrybkov/alfred-focus-on-work",
