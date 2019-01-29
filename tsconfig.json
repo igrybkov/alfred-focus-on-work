@@ -15,11 +15,10 @@
         "moduleResolution": "node",
         "target": "es2017",
         "lib": ["es2016"],
-        "allowJs": false
+        "allowJs": true
     },
     "include": [
-        "./lib/**/*",
-        "./src/**/*"
+        "./src/**/*",
     ],
     "exclude": [
         "node_modules"
