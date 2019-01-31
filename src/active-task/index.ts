@@ -1,5 +1,4 @@
 'use strict';
-// @flow
 import { App, Registrator } from '../app';
 import Application from '../app/application';
 import { GetMainMenu, StartWorkOnTask, StopWorkOnTask } from '../events';

@@ -3,7 +3,6 @@
 import { Registrator } from '../app';
 import Application from '../app/application';
 
-// @flow
 import { createHash } from 'crypto';
 import { AlfredItemsSet } from '../alfred';
 import { GetMainMenu, GetTasks, OpenApp, ResolveTaskItem } from '../events';

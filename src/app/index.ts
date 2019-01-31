@@ -1,4 +1,3 @@
-// @flow
 import Application from './application';
 import { Registrator } from './registrator';
 

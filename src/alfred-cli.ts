@@ -8,16 +8,23 @@ import { modules } from './modules';
 import program = require('commander');
 
 import {
+  AddConfigurationValueToSet,
   GetMainMenu,
   GetTasks,
   GetTimeMenu,
   OpenApp,
+  RemoveConfigurationValue,
+  RemoveConfigurationValueFromSet,
   RenderOutput,
+  SetConfigurationValue,
+  ShowSettingOptions,
+  ShowSettingsItems,
   StartWorkOnTask,
   StopWorkOnTask,
 } from './events/index.js';
 
-const version = process.env.alfred_workflow_version || process.env.npm_package_version;
+const version =
+  process.env.alfred_workflow_version || process.env.npm_package_version;
 if (version !== undefined) {
   program.version(version);
 }
@@ -145,19 +152,112 @@ const commands = [
   },
   async () => {
     program
-      .command('config:set')
-      .description('Set configuration option')
-      .arguments('<name> <value>')
-      .action(async (name, value) => {
-        App.config.set(name, value);
-      });
-  },
-  async () => {
-    program
       .command('config:path')
       .description('Get path to configuration file')
       .action(async () => {
         console.log(App.config.path);
+      });
+  },
+  async () => {
+    program
+      .command('menu:settings')
+      .description('Show menu with list of settings')
+      .action(async () => {
+        const event = new ShowSettingsItems();
+        await App.done(App.dispatch(event));
+      });
+  },
+  async () => {
+    program
+      .command('menu:setting-options')
+      .description('Get path to configuration file')
+      .arguments('[setting-path]')
+      .action(async (settingPath) => {
+        const configPath: string = requireArgument(
+          'Setting path is required',
+          settingPath,
+          process.env.settingPath,
+        );
+        const event = new ShowSettingOptions(configPath);
+        await App.done(App.dispatch(event));
+      });
+  },
+  async () => {
+    program
+      .command('settings:set')
+      .description('Set configuration option')
+      .arguments('[settingPath] [settingValue]')
+      .action(async (settingPath, settingValue) => {
+        settingPath = requireArgument(
+          'Setting path is required',
+          settingPath,
+          process.env.settingPath,
+        );
+        settingValue = requireArgument(
+          'Setting value is required',
+          settingValue,
+          process.env.settingValue,
+        );
+        const event = new SetConfigurationValue(settingPath, settingValue);
+        await App.dispatch(event);
+      });
+  },
+  async () => {
+    program
+      .command('settings:add')
+      .description('Add configuration option to a set in the path')
+      .arguments('[settingPath] [settingValue]')
+      .action(async (settingPath, settingValue) => {
+        settingPath = requireArgument(
+          'Setting path is required',
+          settingPath,
+          process.env.settingPath,
+        );
+        settingValue = requireArgument(
+          'Setting value is required',
+          settingValue,
+          process.env.settingValue,
+        );
+        const event = new AddConfigurationValueToSet(settingPath, settingValue);
+        await App.dispatch(event);
+      });
+  },
+  async () => {
+    program
+      .command('settings:remove')
+      .description('Remove configuration option')
+      .arguments('[settingPath>')
+      .action(async (settingPath) => {
+        settingPath = requireArgument(
+          'Setting path is required',
+          settingPath,
+          process.env.settingPath,
+        );
+        const event = new RemoveConfigurationValue(settingPath);
+        await App.dispatch(event);
+      });
+  },
+  async () => {
+    program
+      .command('settings:remove-from-set')
+      .description('Remove configuration option')
+      .arguments('[settingPath] [settingKey>')
+      .action(async (settingPath, settingKey) => {
+        settingPath = requireArgument(
+          'Setting path is required',
+          settingPath,
+          process.env.settingPath,
+        );
+        settingKey = requireArgument(
+          'Setting value is required',
+          settingKey,
+          process.env.settingKey,
+        );
+        const event = new RemoveConfigurationValueFromSet(
+          settingPath,
+          settingKey,
+        );
+        await App.dispatch(event);
       });
   },
   async () => {
