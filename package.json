@@ -28,6 +28,7 @@
   },
   "files": [
     "lib",
+    "tools",
     "icon.png",
     "info.plist",
     "images",
