@@ -1,5 +1,4 @@
 'use strict';
-// @flow
 import Application from '../app/application';
 
 import { Registrator } from '../app/registrator';

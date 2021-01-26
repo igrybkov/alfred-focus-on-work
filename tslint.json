@@ -47,7 +47,8 @@
         "prefer-template": true,
         "semicolon": [true, "always"],
         "type-literal-delimiter": true,
-        "no-console": false
+        "no-console": false,
+        "max-line-length": [true, {"limit": 120, "ignore-pattern": "^import |^export {(.*?)}"}]
     },
     "rulesDirectory": []
 }

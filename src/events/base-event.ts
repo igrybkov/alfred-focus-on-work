@@ -1,5 +1,4 @@
 'use strict';
-// @flow
 import { v4 as uuidv4 } from 'uuid';
 import { AlfredOutput } from '../alfred';
 
